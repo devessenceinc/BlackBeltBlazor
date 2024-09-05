@@ -1,0 +1,12 @@
+﻿@inject AppState AppState
+
+@if (AppState.RenderMode == null)
+{
+    <div>AppState is Null</div>
+}
+else
+{
+    <p>Render Mode: @AppState.RenderMode</p>
+    <p>Prerendering: @AppState.IsPrerendering</p>
+    <p>IP Address: @AppState.RemoteIPAddress</p>
+}

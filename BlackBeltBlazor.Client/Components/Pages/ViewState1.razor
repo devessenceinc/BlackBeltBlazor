@@ -1,0 +1,25 @@
+﻿@page "/viewstate1"
+
+<PageTitle>Black Belt Blazor - ViewState1</PageTitle>
+
+<h1 class="text-center">ViewState1</h1>
+<hr />
+
+<p class="text-center">Use browser developer tools and view Network tab to see the payload size of the page</p>
+
+<h2 class="text-center">Static</h2>
+<br />
+<ViewStateStatic Items="@_items" />
+
+@code {
+    List<string> _items;
+
+    protected override void OnInitialized()
+    {
+        _items = new List<string>();
+        for (int i = 0; i < 500; i++)
+        {
+            _items.Add("Et optio quia ut alias explicabo aut nobis architecto et nulla velit et perspiciatis similique et rerum illo. Ea labore voluptas et eius ipsum sit explicabo harum ex provident velit! Et commodi quasi ea ducimus expedita est autem modi. Sit repellendus dolorem qui laboriosam voluptas in quis aspernatur At voluptas earum. Aut suscipit galisum qui voluptate similique ut voluptas totam. Qui ipsa voluptates et amet iusto eum obcaecati odio aut corporis quam ea internos tempora ut tenetur neque. 33 dolorem eius et earum voluptatibus cum rerum nesciunt. Non impedit recusandae ut voluptatum culpa et perferendis mollitia aut maxime perferendis ut dolor sapiente. Non illo nisi quo aperiam ipsam ex tempora reprehenderit rem assumenda dolorum At praesentium galisum in consectetur perferendis. Sed expedita quia quo odio numquam cum quidem temporibus At animi nostrum vel dicta consequatur sed modi atque id laudantium ullam. Hic atque maiores ad blanditiis nihil hic modi Quis! Ut minima quia qui deleniti quae sed cumque tempore a expedita nihil ut eveniet neque qui quia maiores! Et assumenda excepturi eum eligendi nulla eum repudiandae voluptatibus eum quisquam debitis et excepturi alias quo sequi quia. Ab internos veniam et amet iusto ut inventore excepturi et dolorem voluptatem ea iusto consequatur?");
+        }
+    }
+}

@@ -1,0 +1,24 @@
+﻿@page "/buttonclick"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Button Click</PageTitle>
+
+<h1 class="text-center">Button Click</h1>
+<hr />
+
+<p class="text-center">Button click does not work in static rendering</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <ButtonInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <ButtonInteractive />
+        </div>
+    </div>
+</div>
+
+

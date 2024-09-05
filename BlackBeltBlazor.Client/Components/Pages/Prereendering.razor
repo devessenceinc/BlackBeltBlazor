@@ -1,0 +1,23 @@
+﻿@page "/prerendering"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Prerendering</PageTitle>
+
+<h1 class="text-center">Prerendering</h1>
+<hr />
+
+<p class="text-center">Disabling pre-rendering on an interactive component prevents it from loading data twice - however it also delays UI rendering</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <PrerenderingInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode, false)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <PrerenderingStatic />
+        </div>
+    </div>
+</div>
+

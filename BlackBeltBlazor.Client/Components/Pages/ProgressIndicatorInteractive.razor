@@ -1,0 +1,19 @@
+﻿@if (_loading)
+{
+    <div class="app-progress-indicator"></div>
+}
+
+<button class="btn btn-primary" @onclick="Load">Load</button>
+
+@code {
+    private bool _loading = false;
+
+    private async Task Load()
+    {
+        _loading = true;
+        StateHasChanged();
+        await Task.Delay(2000);
+        _loading = false;
+        StateHasChanged();
+    }
+}

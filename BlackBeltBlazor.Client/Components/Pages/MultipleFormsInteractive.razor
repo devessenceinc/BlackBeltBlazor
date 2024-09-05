@@ -1,0 +1,24 @@
+﻿<label for="firstname">First Name:</label><br>
+<input type="text" name="firstname" class="form-control" @bind="@_firstname"><br>
+<label for="lastname">Last Name:</label><br>
+<input type="text" name="lastname" class="form-control" @bind="@_lastname"><br><br>
+<button type="button" class="btn btn-primary" @onclick="Submit">Submit</button>
+
+@if (!string.IsNullOrEmpty(_message))
+{
+    <br />
+    @((MarkupString)_message)
+}
+
+@code {
+    private string _firstname;
+    private string _lastname;
+    private string _message;
+
+    private void Submit()
+    {
+        _message = $"<br /><p>";
+        _message += $"Form Submitted...<br />First Name: {_firstname}<br />Last Name: {_lastname}<br />";
+        _message += "</p>";
+    }
+}

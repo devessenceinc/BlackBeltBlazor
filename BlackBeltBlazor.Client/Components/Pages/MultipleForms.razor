@@ -1,0 +1,27 @@
+﻿@page "/multipleforms"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Multiple Forms</PageTitle>
+
+<h1 class="text-center">Multiple Forms</h1>
+<hr />
+
+<p class="text-center">Form fields leak to other forms in static rendering</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <MultipleFormsInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+            <br /><br />
+            <MultipleFormsInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <MultipleFormsStatic FormName="MultipleForms1" />
+            <br />
+            <MultipleFormsStatic FormName="MultipleForms2" />
+        </div>
+    </div>
+</div>
+

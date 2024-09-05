@@ -1,0 +1,13 @@
+﻿@if (CascadingState == null)
+{
+    <div>CascadingState is Null</div>
+}
+else
+{
+    <p>@CascadingState.Value</p>
+}
+
+@code {
+    [CascadingParameter]
+    public CascadingState CascadingState { get; set; }
+}

@@ -1,0 +1,14 @@
+﻿@if (Items == null)
+{
+    <div>Items is Null</div>
+}
+else
+{
+    <p>Items: @Items.Count</p>
+}
+
+@code {
+    [Parameter] 
+    public List<string> Items { get; set; }
+
+}

@@ -1,0 +1,22 @@
+﻿@page "/dualservice"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Dual Service</PageTitle>
+
+<h1 class="text-center">Black Belt Blazor - Dual Service</h1>
+<hr />
+
+<p class="text-center">Multiple implementations of same interface can be used when running on client vs server. Change appsettings.json to different RenderMode.</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <DualServiceInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <DualServiceStatic />
+        </div>
+    </div>
+</div>

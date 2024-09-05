@@ -1,0 +1,23 @@
+﻿@page "/cascadingparameter"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - CascadingParameter</PageTitle>
+
+<h1 class="text-center">CascadingParameter</h1>
+<hr />
+
+<p class="text-center">Routes.razor has a CascadingParameter defined. CascadingParameters not available in interactive rendering after crossing render mode bouundary</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <CascadingParameterInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <CascadingParameterStatic />
+        </div>
+    </div>
+</div>
+

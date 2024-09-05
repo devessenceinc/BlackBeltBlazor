@@ -1,0 +1,18 @@
+﻿<p role="status">Current count: @currentCount</p>
+
+<form method="post" @onsubmit="IncrementCount" @formname="@FormName" data-enhance>
+    <AntiforgeryToken />
+    <button type="submit" class="btn btn-primary">Click me</button>
+</form>
+
+@code {
+    [Parameter]
+    public string FormName { get; set; }
+
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

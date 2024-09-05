@@ -1,0 +1,24 @@
+﻿@attribute [StreamRendering]
+
+@if (_loading)
+{
+    <div class="app-progress-indicator"></div>
+}
+
+<form method="post" @onsubmit="Load" @formname="ProgressIndicatorForm" data-enhance>
+    <AntiforgeryToken />
+    <button type="submit" class="btn btn-primary">Click me</button>
+</form>
+
+@code {
+    private bool _loading = false;
+
+    private async Task Load()
+    {
+        _loading = true;
+        StateHasChanged();
+        await Task.Delay(2000);
+        _loading = false;
+        StateHasChanged();
+    }
+}

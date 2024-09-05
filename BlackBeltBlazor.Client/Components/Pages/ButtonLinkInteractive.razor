@@ -1,0 +1,20 @@
+﻿<ul class="list-inline text-center align-items-center">
+    <li class="list-inline-item align-middle">
+        <button type="button" class="btn btn-primary" @onclick="@(() => SetPage(-1))">&laquo;</button>
+    </li>
+    <li class="list-inline-item align-middle">
+        <div class="mx-2">Page: @_page</div>
+    </li>
+    <li class="list-inline-item align-middle">
+        <button type="button" class="btn btn-primary" @onclick="@(() => SetPage(1))">&raquo;</button>
+    </li>
+</ul>
+
+@code {
+    private int _page = 1;
+
+    private void SetPage(int page)
+    {
+        _page += page;
+    }
+}

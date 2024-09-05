@@ -1,0 +1,15 @@
+﻿@page "/authentication"
+
+<PageTitle>Black Belt Blazor - Authentication</PageTitle>
+
+<h1 class="text-center">Authentication</h1>
+<hr />
+
+<ul>
+    <li>Static components can access HttpContext via a CascadingParameter - however it is only supposed to be used in Root components</li>
+    <li>Interactive components do not support HttpContext - it will be null</li>
+    <li>Interactive components do not support HttpContextAccessor - it will be null</li>
+    <li>The scaffolded Auth components for .NET Identity created by default Blazor Web App template use Static rendering and do not work if you make your application globally interactive</li>
+    <li>Recommended approach is to use AuthenticationStateProviders</li>
+    <li>It is possible for a Blazor application to support authentication in all render modes and hosting models ie. see Oqtane Framework</li>
+</ul>

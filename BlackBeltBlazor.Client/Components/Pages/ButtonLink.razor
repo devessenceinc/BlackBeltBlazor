@@ -1,0 +1,24 @@
+﻿@page "/buttonlink"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Button Link</PageTitle>
+
+<h1 class="text-center">Button Link</h1>
+<hr />
+
+<p class="text-center">Hyperlinks and querystrings can be used instead of button clicks in static rendering</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <ButtonLinkInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <ButtonLinkStatic />
+        </div>
+    </div>
+</div>
+
+

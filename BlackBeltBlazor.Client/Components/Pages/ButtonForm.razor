@@ -1,0 +1,25 @@
+﻿@page "/buttonform"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Button Form</PageTitle>
+
+<h1 class="text-center">Button Form</h1>
+<hr />
+
+<p class="text-center">Button clicks can be replaced with traditional forms in static rendering</p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <ButtonStatic FormName="InteractiveButtonForm" @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <ButtonStatic FormName="StaticButtonForm" />
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,31 @@
+﻿@page "/project"
+
+<PageTitle>Black Belt Blazor - Project Setup</PageTitle>
+
+<h1 class="text-center">Project Setup</h1>
+<hr />
+
+<ul>
+    <li>Blazor in .NET 8 was originally codenamed "Blazor United" </li>
+    <li>The idea was the developers should not be foreced to make architecture decisions when they first create a Blazor project</li>
+    <li>The reality is that this was a symptom of the default Blazor application template - not a technical limitation of Blazor itself </li>
+    <li>Unfortunately, the default Blazor Web App template in .NET 8 still suffers from similar problems</li>
+    <li>If you start with the default Blazor Web App template you will not be able to utilize all of the Blazor capabilities without refactoring </li>
+    <li>Currently there is no Blazor template offered by Microsoft which sets you up for success with all Blazor capabilities </li>
+    <br />
+    <li>To support Blazor WebAssembly, Blazor Auto, or Blazor Hybrid you need to create a separate Client project </li>
+    <li>The client project is where your components and client services should reside </li>
+    <li>This allows you to use proper separation of concerns so that you clearly understand the difference between client and server workloads </li>
+    <br />
+    <li>Blazor Static Server Rendering (SSR) is NOT the same as traditional MVC or Razor Page rendering </li>
+    <li>By default SSR uses Enhanced Navigation which is a UI abstraction layer that affects how the web application behaves </li>
+    <br />
+    <li>Usage of &#64;rendermode - instance vs. definition </li>
+    <li>Render mode specification can be abstracted and specified as configuration </li>
+    <li>This project has appsettings.json which defines RenderMode, loaded in App.razor, passed as AppState, set using Utility class </li>
+    <br />
+    <li>Render mode boundaries are when the application transitions from a static component to an interactive component </li>
+    <li>This project uses static rendering by default and demonstrates render mode transitions to interactive components</li>
+    <br />
+    <li>Make sure you are using the latest .NET 8 SDK as early versions had issues </li>
+</ul>

@@ -1,0 +1,14 @@
+﻿@inject NavigationManager NavigationManager
+
+<form method="post" @onsubmit="NavigateTo" @formname="NavigateToForm" data-enhance>
+    <AntiforgeryToken />
+    <button type="submit" class="btn btn-primary">Navigate To Home</button>
+</form>
+
+
+@code {
+    private void NavigateTo()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

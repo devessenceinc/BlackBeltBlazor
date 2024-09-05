@@ -1,0 +1,12 @@
+﻿@inject IJSRuntime JSRuntime
+
+@code {
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			var interop = new JavaScriptInterop(JSRuntime);
+			await interop.ShowAlert();
+		}
+	}
+}

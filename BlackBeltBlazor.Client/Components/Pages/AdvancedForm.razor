@@ -1,0 +1,23 @@
+﻿@page "/advancedform"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Advaced Form</PageTitle>
+
+<h1 class="text-center">Advanced Form</h1>
+<hr />
+
+<p class="text-center">Advanced interactions such as OnChange are not supported in static rendering</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <AdvancedFormInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <AdvancedFormStatic />
+        </div>
+    </div>
+</div>
+

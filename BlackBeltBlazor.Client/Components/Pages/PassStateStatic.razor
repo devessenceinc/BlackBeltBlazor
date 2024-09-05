@@ -1,0 +1,26 @@
+﻿@inject AppState AppState
+
+@if (CascadingState == null)
+{
+    <div>CascadingState is Null</div>
+}
+else
+{
+    <p>@CascadingState.Value</p>
+}
+
+@if (AppState.RenderMode == null)
+{
+    <div>AppState is Null</div>
+}
+else
+{
+    <p>Render Mode: @AppState.RenderMode</p>
+    <p>Prerendering: @AppState.IsPrerendering</p>
+    <p>IP Address: @AppState.RemoteIPAddress</p>
+}
+
+@code {
+    [CascadingParameter]
+    public CascadingState CascadingState { get; set; }
+}

@@ -1,0 +1,32 @@
+﻿<form method="post" @onsubmit="Submit" @formname="@FormName" data-enhance>
+    <AntiforgeryToken />
+    <label for="firstname">First Name:</label><br>
+    <input type="text" name="firstname" class="form-control" @bind="@_firstname"><br>
+    <label for="lastname">Last Name:</label><br>
+    <input type="text" name="lastname" class="form-control" @bind="@_lastname"><br><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (!string.IsNullOrEmpty(_message))
+{
+    @((MarkupString)_message)
+}
+
+@code {
+    [Parameter]
+    public string FormName { get; set; }
+
+    [SupplyParameterFromForm(FormName = "MultipleForms1")] public string FirstName { get => ""; set => _firstname = value; }
+    [SupplyParameterFromForm(FormName = "MultipleForms1")] public string LastName { get => ""; set => _lastname = value; }
+
+    private string _firstname;
+    private string _lastname;
+    private string _message;
+
+    private void Submit()
+    {
+        _message = $"<br /><p>";
+        _message += $"Form Submitted...<br />First Name: {_firstname}<br />Last Name: {_lastname}<br />";
+        _message += "</p>";
+    }
+}

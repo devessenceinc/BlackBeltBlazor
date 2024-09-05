@@ -1,0 +1,16 @@
+﻿@page "/serialization1"
+
+<PageTitle>Black Belt Blazor - Serialization</PageTitle>
+
+<h1 class="text-center">Serialization1</h1>
+<hr />
+
+<p class="text-center">The Serialization2 page will crash because the Url model cannot be serialized</p>
+
+<h2 class="text-center">Static</h2>
+<br />
+<SerializationStatic Url="@_url" />
+
+@code {
+    private Url _url = new Url("https://www.microsoft.com/");
+}

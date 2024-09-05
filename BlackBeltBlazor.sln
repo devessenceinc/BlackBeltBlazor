@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34212.112
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackBeltBlazor", "BlackBeltBlazor\BlackBeltBlazor.csproj", "{4F527D2F-D4AA-45A3-B8BF-D7347A1F813D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackBeltBlazor.Client", "BlackBeltBlazor.Client\BlackBeltBlazor.Client.csproj", "{CF7B9CE4-D14B-4AAE-84E2-F37DFE57A3E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F527D2F-D4AA-45A3-B8BF-D7347A1F813D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F527D2F-D4AA-45A3-B8BF-D7347A1F813D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F527D2F-D4AA-45A3-B8BF-D7347A1F813D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F527D2F-D4AA-45A3-B8BF-D7347A1F813D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7B9CE4-D14B-4AAE-84E2-F37DFE57A3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7B9CE4-D14B-4AAE-84E2-F37DFE57A3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7B9CE4-D14B-4AAE-84E2-F37DFE57A3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7B9CE4-D14B-4AAE-84E2-F37DFE57A3E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E2FC0E2-D6B9-4C9B-821E-FE8536FF455B}
+	EndGlobalSection
+EndGlobal

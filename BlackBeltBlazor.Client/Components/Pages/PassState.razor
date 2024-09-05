@@ -1,0 +1,27 @@
+﻿@page "/passstate"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Pass State</PageTitle>
+
+<h1 class="text-center">Pass State</h1>
+<hr />
+
+<p class="text-center">Cascading Parameter and Scoped Service state can be passed explicitly to components using standard parameters</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <PassStateInteractive AppState="@AppState" CascadingState="@CascadingState" @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <PassStateStatic />
+        </div>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public CascadingState CascadingState { get; set; }
+}

@@ -1,0 +1,23 @@
+﻿@page "/javascript"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - JavaScript</PageTitle>
+
+<h1 class="text-center">JavaScript</h1>
+<hr />
+
+<p class="text-center">Completely difference implementation required for static and interactive components</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <JavaScriptInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <JavaScriptStatic />
+        </div>
+    </div>
+</div>
+

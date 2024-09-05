@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Extensions
+@using BlackBeltBlazor.Client.Models
+@using BlackBeltBlazor.Client.Shared
+@using BlackBeltBlazor.Client.Components
+
+@inject AppState AppState
+@inject IConfiguration Configuration
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="BlackBeltBlazor.styles.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <HeadOutlet />
+</head>
+
+<body>
+    <Routes />
+    <script src="_framework/blazor.web.js"></script>
+    <script src="JavaScriptInteractive.js"></script>
+
+@*     <script>
+       // Improve Blazor Static Rendering Scroll Position Behavior
+       window.interceptNavigation = () => {
+            let currentUrl = window.location.pathname;
+            Blazor.addEventListener('enhancedload', () => {
+                let newUrl = window.location.pathname;
+                if (currentUrl != newUrl) {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+                }
+                currentUrl = newUrl;
+            });
+        };
+        document.onload += window.interceptNavigation();
+    </script> *@
+</body>
+
+</html>
+
+@code {
+    [CascadingParameter] 
+    HttpContext Context { get; set; }
+
+    protected override void OnInitialized()
+    {
+        AppState.RenderMode = Configuration["RenderMode"];
+        AppState.IsPrerendering = (Context != null) ? true : false;
+        AppState.RemoteIPAddress = Context.Connection.RemoteIpAddress?.ToString();
+    }
+}
+ 

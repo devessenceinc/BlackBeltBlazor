@@ -1,0 +1,15 @@
+﻿@page "/serialization2"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Serialization</PageTitle>
+
+<h1 class="text-center">Serialization2</h1>
+<hr />
+
+<h2 class="text-center">@AppState.RenderMode</h2>
+<br />
+<SerializationInteractive Url="@_url" @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+
+@code {
+    private Url _url = new Url("https://www.microsoft.com/");
+}

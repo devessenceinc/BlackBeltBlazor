@@ -1,0 +1,10 @@
+﻿@inject NavigationManager NavigationManager
+
+<button class="btn btn-primary" @onclick="NavigateTo">Navigate To Home</button>
+
+@code {
+    private void NavigateTo()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

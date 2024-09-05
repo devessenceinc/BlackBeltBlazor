@@ -1,0 +1,17 @@
+﻿<CascadingValue Value="@_cascading">
+    <Router AppAssembly="typeof(Program).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+            <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        </Found>
+    </Router>
+</CascadingValue>
+
+@code {
+    CascadingState _cascading = new CascadingState();
+
+    protected override void OnInitialized()
+    {
+        _cascading.Value = "**This Is A CascadingParameter Value**";
+    }
+}

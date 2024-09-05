@@ -1,0 +1,26 @@
+﻿@using System
+@inject NavigationManager NavigationManager
+
+<ul class="list-inline text-center align-items-center">
+    <li class="list-inline-item align-middle">
+        <a class="btn btn-primary" href="@($"/buttonlink?page={_page - 1}")">&laquo;</a>
+    </li>
+    <li class="list-inline-item align-middle">
+        <div class="mx-2">Page: @_page</div>
+    </li>
+    <li class="list-inline-item align-middle">
+        <a class="btn btn-primary" href="@($"/buttonlink?page={_page + 1}")">&raquo;</a>
+    </li>
+</ul>
+
+@code {
+    private int _page = 1;
+
+    protected override void OnInitialized()
+    {
+        if (NavigationManager.Uri.Contains("?"))
+        {
+            _page = int.Parse(NavigationManager.Uri.Split("?")[1].Replace("page=", ""));
+        }
+    }
+}

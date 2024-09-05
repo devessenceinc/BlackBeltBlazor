@@ -1,0 +1,14 @@
+﻿<div>@_message</div>
+
+@code {
+	public string _message = "";
+
+	protected override void OnAfterRender(bool firstRender)
+	{
+		if (firstRender && _message == "")
+		{
+			_message = "OnAfterRender Method Called";
+			StateHasChanged();
+		}
+	}
+}
