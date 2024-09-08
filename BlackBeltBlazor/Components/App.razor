@@ -50,7 +50,9 @@
 
     protected override void OnInitialized()
     {
+        // RenderMode is specified in appsettings.json and can be InteractiveServer, InteractiveWebAssembly, or InteractiveAuto
         AppState.RenderMode = Configuration["RenderMode"];
+
         AppState.IsPrerendering = (Context != null) ? true : false;
         AppState.RemoteIPAddress = Context.Connection.RemoteIpAddress?.ToString();
     }

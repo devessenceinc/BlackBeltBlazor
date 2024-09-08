@@ -2,12 +2,15 @@
 
 <form method="post" @onsubmit="IncrementCount" @formname="@FormName" data-enhance>
     <AntiforgeryToken />
+    <input type="hidden" name="count" value="@currentCount">
     <button type="submit" class="btn btn-primary">Click me</button>
 </form>
 
 @code {
     [Parameter]
     public string FormName { get; set; }
+
+    [SupplyParameterFromForm] public string Count { get => ""; set => currentCount = int.Parse(value); }
 
     private int currentCount = 0;
 
