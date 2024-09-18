@@ -1,0 +1,24 @@
+﻿@page "/anchors"
+@inject AppState AppState
+
+<PageTitle>Black Belt Blazor - Anchors</PageTitle>
+
+<h1 class="text-center">Anchors</h1>
+<hr />
+
+<p class="text-center">Anchor links do not work as expected in Blazor</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center">@AppState.RenderMode</h2><br />
+            <AnchorsInteractive @rendermode="@Utilities.GetRenderMode(AppState.RenderMode)" />
+        </div>
+        <div class="col">
+            <h2 class="text-center">Static</h2><br />
+            <AnchorsStatic />
+        </div>
+    </div>
+</div>
+
+
