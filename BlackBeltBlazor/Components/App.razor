@@ -32,7 +32,7 @@
             let currentUrl = window.location.pathname;
             Blazor.addEventListener('enhancedload', () => {
                 let newUrl = window.location.pathname;
-                if (currentUrl != newUrl) {
+                if (currentUrl !== newUrl || window.location.hash === '') {
                     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
                 }
                 currentUrl = newUrl;
