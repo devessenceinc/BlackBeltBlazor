@@ -1,0 +1,13 @@
+﻿@page "/MalformedElement"
+
+<PageTitle>Malformed Element</PageTitle>
+
+<h1 class="text-center">Malformed Element</h1>
+<hr />
+
+<p class="text-center">This page includes a malformed HTML element:</p>
+
+<p class="text-center">&lt;a id="identifier"&gt; (it is missing the &lt;/a&gt)</p>
+@((MarkupString)"<a id=\"identifier\">")
+
+<p class="text-center">If you use the browser Dev Tools to inpect the page source, you will notice that Blazor will add the missing &lt;/a&gt element to the DOM - however it does not always added it in the correct location which can result in strange rendering issues with the page which are very difficult to locate</p>
